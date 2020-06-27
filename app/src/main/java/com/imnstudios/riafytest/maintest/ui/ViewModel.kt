@@ -42,7 +42,6 @@ class ViewModel(
             job = Coroutines.main {
                 val resp = repository.postPost(model)
                 resp.let {
-                    //if return it is success
                     listenerInterface?.onSuccess(resp)
                     return@main
                 }

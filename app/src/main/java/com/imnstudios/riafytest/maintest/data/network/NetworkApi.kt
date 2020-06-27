@@ -22,7 +22,6 @@ interface NetworkApi {
 
     companion object {
         operator fun invoke(): NetworkApi {
-
             return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("http://fastingconsole.us-east-1.elasticbeanstalk.com/")

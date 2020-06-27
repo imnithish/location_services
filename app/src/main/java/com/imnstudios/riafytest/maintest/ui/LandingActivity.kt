@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.imnstudios.riafytest.R
 import com.imnstudios.riafytest.maintest.data.models.ModelDataClass
+import com.imnstudios.riafytest.maintest.data.models.ModelDataClass2
 import com.imnstudios.riafytest.maintest.data.network.NetworkApi
 import com.imnstudios.riafytest.maintest.data.repositories.Repository
 import com.imnstudios.riafytest.maintest.ui.adapters.PostsAdapter
@@ -24,7 +25,7 @@ class LandingActivity : AppCompatActivity(), ListenerInterface {
     private lateinit var viewModel: ViewModel
 
 
-//    private var postArr: ArrayList<ModelDataClass>? = null
+//    private var postArr: ArrayList<ModelDataClass2>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,6 +71,11 @@ class LandingActivity : AppCompatActivity(), ListenerInterface {
             val descString = descEt.text.toString()
 
             val model = ModelDataClass(titleString, descString)
+
+//            val model = ModelDataClass2(titleString, descString)
+//            model.title = titleString
+//            model.description = descString
+//            postArr?.add(model)
 //            postArr?.add(model)
 
             viewModel.postPost(model)

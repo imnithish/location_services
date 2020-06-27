@@ -4,8 +4,7 @@ import com.imnstudios.riafytest.maintest.data.models.ModelDataClass
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
+import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
@@ -15,11 +14,9 @@ interface NetworkApi {
     @GET("kotlintest")
     suspend fun getPosts(): Response<List<ModelDataClass>>
 
-    @FormUrlEncoded
     @POST("kotlintest")
     suspend fun postPost(
-        @Field("title") title: String,
-        @Field("desc") desc: String
+        @Body body: ModelDataClass
     ): Response<ModelDataClass>
 
 

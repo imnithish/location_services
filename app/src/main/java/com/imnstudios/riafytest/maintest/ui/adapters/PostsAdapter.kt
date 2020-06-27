@@ -34,13 +34,8 @@ class PostsAdapter(
 
 
     inner class PostsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var title: TextView
-        var desc: TextView
-
-        init {
-            this.title = view.findViewById(R.id.title_tv)
-            this.desc = view.findViewById(R.id.desc_tv)
-        }
+        var title: TextView = view.findViewById(R.id.title_tv)
+        var desc: TextView = view.findViewById(R.id.desc_tv)
 
     }
 

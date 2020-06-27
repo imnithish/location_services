@@ -24,6 +24,8 @@ class LandingActivity : AppCompatActivity(), ListenerInterface {
     private lateinit var viewModel: ViewModel
 
 
+//    private var postArr: ArrayList<ModelDataClass>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing)
@@ -61,11 +63,15 @@ class LandingActivity : AppCompatActivity(), ListenerInterface {
         val descEt = dialog.findViewById<EditText>(R.id.desc_et)
         val doneButton = dialog.findViewById<Button>(R.id.done_btn)
 
+//        postArr = ArrayList()
+
         doneButton.setOnClickListener {
             val titleString = titleEt.text.toString()
             val descString = descEt.text.toString()
 
             val model = ModelDataClass(titleString, descString)
+//            postArr?.add(model)
+
             viewModel.postPost(model)
             dialog.dismiss()
         }

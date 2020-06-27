@@ -6,7 +6,10 @@ import org.json.JSONObject
 import retrofit2.Response
 import java.io.IOException
 
+const val DEBUG_TAG = "ERORORORO"
+
 abstract class SafeApiRequest {
+
 
     suspend fun <T : Any> apiRequest(call: suspend () -> Response<T>): T {
         val response = call.invoke()
@@ -26,7 +29,7 @@ abstract class SafeApiRequest {
 
             }
             message.append("Error Code :${response.code()}")
-            Log.d("ERRORORORORO", message.toString())
+            Log.d(DEBUG_TAG, message.toString())
 
             throw  ApiException(
                 message.toString()
@@ -39,6 +42,6 @@ abstract class SafeApiRequest {
 class ApiException(message: String) : IOException(message) {
     override fun printStackTrace() {
         super.printStackTrace()
-        Log.d("ERRORORORORO", message.toString())
+        Log.d(DEBUG_TAG, message.toString())
     }
 }

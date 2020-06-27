@@ -19,7 +19,7 @@ interface NetworkApi {
     @POST("kotlintest")
     suspend fun postPost(
         @Field("title") title: String,
-        @Field("desc") desc: String
+        @Field("description") description: String
     ): Response<ModelDataClass>
 
 

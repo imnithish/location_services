@@ -11,6 +11,6 @@ class Repository(
     suspend fun getPosts() = apiRequest { api.getPosts() }
 
     suspend fun postPost(model: ModelDataClass) =
-        apiRequest { api.postPost(model.title, model.desc) }
+        apiRequest { api.postPost(model.title, model.description) }
 
 }

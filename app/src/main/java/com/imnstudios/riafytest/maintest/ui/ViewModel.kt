@@ -3,6 +3,7 @@ package com.imnstudios.riafytest.maintest.ui
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.imnstudios.riafytest.maintest.data.models.ModelDataClass
 import com.imnstudios.riafytest.maintest.data.repositories.ApiException
 import com.imnstudios.riafytest.maintest.data.repositories.Repository
 import com.imnstudios.riafytest.utils.Coroutines

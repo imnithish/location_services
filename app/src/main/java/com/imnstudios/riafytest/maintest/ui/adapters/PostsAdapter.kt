@@ -29,7 +29,7 @@ class PostsAdapter(
 
 
         holder.title.text = posts.title
-        holder.desc.text = posts.desc
+        holder.desc.text = posts.description
     }
 
 

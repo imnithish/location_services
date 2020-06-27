@@ -1,4 +1,4 @@
-package com.imnstudios.riafytest
+package com.imnstudios.riafytest.utils
 
 import android.content.Context
 import android.widget.Toast

@@ -1,4 +1,4 @@
-package com.imnstudios.riafytest
+package com.imnstudios.riafytest.backgroundlocation
 
 import android.Manifest
 import android.content.*
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.os.IBinder
 import android.preference.PreferenceManager
 import androidx.appcompat.app.AppCompatActivity
+import com.imnstudios.riafytest.R
+import com.imnstudios.riafytest.utils.toast
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.work.*
 import com.imnstudios.riafytest.R
-import com.imnstudios.riafytest.toast
+import com.imnstudios.riafytest.utils.toast
 import kotlinx.android.synthetic.main.activity_main_three.*
 import java.util.concurrent.TimeUnit
 

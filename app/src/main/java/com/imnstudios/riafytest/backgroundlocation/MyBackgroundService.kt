@@ -1,4 +1,4 @@
-package com.imnstudios.riafytest
+package com.imnstudios.riafytest.backgroundlocation
 
 import android.annotation.SuppressLint
 import android.app.*
@@ -11,6 +11,7 @@ import android.os.Build.VERSION_CODES
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.google.android.gms.location.*
+import com.imnstudios.riafytest.R
 import org.greenrobot.eventbus.EventBus
 
 class MyBackgroundService : Service() {
@@ -20,7 +21,8 @@ class MyBackgroundService : Service() {
         private val PACKAGE_NAME = "com.imnstudios.riafytest"
         private val EXTRA_STARTED_FROM_NOTIFICATION = "$PACKAGE_NAME.started_from_notification"
         private val UPDATE_INTERVAL_IN_MIL: Long = 10000
-        private val FASTED_UPDATE_INTERVAL_IN_MIL: Long = UPDATE_INTERVAL_IN_MIL
+        private val FASTED_UPDATE_INTERVAL_IN_MIL: Long =
+            UPDATE_INTERVAL_IN_MIL
         private val NOTIFICATION_ID = 1234
     }
 
@@ -134,14 +136,20 @@ class MyBackgroundService : Service() {
 
     private fun createLocationRequest() {
         locationRequest = LocationRequest()
-        locationRequest!!.interval = UPDATE_INTERVAL_IN_MIL
-        locationRequest!!.fastestInterval = FASTED_UPDATE_INTERVAL_IN_MIL
+        locationRequest!!.interval =
+            UPDATE_INTERVAL_IN_MIL
+        locationRequest!!.fastestInterval =
+            FASTED_UPDATE_INTERVAL_IN_MIL
         locationRequest!!.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
     }
 
     private fun onNewLocation(lastLocation: Location?) {
         mLocation = lastLocation!!
-        EventBus.getDefault().postSticky(BackgroundLocation(mLocation!!))
+        EventBus.getDefault().postSticky(
+            BackgroundLocation(
+                mLocation!!
+            )
+        )
         if (serviceIsRunningInForeground(this))
             mNotificationManager!!.notify(NOTIFICATION_ID, notification)
     }

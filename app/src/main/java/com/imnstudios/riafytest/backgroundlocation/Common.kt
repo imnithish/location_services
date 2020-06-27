@@ -1,4 +1,4 @@
-package com.imnstudios.riafytest
+package com.imnstudios.riafytest.backgroundlocation
 
 import android.content.Context
 import android.location.Location

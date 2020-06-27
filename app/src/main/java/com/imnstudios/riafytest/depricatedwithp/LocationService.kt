@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import com.google.android.gms.location.LocationResult
-import com.imnstudios.riafytest.toast
+import com.imnstudios.riafytest.utils.toast
 
 class LocationService : BroadcastReceiver() {
     companion object {

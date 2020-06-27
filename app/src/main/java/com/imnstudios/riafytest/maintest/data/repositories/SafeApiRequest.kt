@@ -37,7 +37,19 @@ abstract class SafeApiRequest {
         }
 
     }
+
+    suspend fun <T> postApiRequest(responseFunction: suspend () -> T): T? {
+        return try {
+            responseFunction.invoke()
+        } catch (e: Exception) {
+            Log.d(DEBUG_TAG, e.toString())
+            e.printStackTrace()
+            null
+        }
+    }
 }
+
+
 
 class ApiException(message: String) : IOException(message) {
     override fun printStackTrace() {

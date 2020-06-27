@@ -1,6 +1,8 @@
 package com.imnstudios.riafytest.maintest.data.network
 
 import com.imnstudios.riafytest.maintest.data.models.ModelDataClass
+import com.imnstudios.riafytest.maintest.data.models.ModelDataClassGet
+import com.imnstudios.riafytest.maintest.data.models.PostResponse
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -12,12 +14,13 @@ interface NetworkApi {
 
 
     @GET("kotlintest")
-    suspend fun getPosts(): Response<List<ModelDataClass>>
+    suspend fun getPosts(): Response<List<ModelDataClassGet>>
+
 
     @POST("kotlintest")
     suspend fun postPost(
         @Body body: ModelDataClass
-    ): Response<ModelDataClass>
+    ) : PostResponse
 
 
     companion object {

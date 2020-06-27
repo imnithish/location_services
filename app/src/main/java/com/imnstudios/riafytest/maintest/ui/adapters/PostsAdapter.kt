@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.imnstudios.riafytest.R
-import com.imnstudios.riafytest.maintest.data.models.ModelDataClass
+import com.imnstudios.riafytest.maintest.data.models.ModelDataClassGet
 
 class PostsAdapter(
-    private val posts: List<ModelDataClass>
+    private val posts: List<ModelDataClassGet>
 ) : RecyclerView.Adapter<PostsAdapter.PostsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostsViewHolder {

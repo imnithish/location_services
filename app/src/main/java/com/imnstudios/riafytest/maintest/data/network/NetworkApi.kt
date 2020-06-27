@@ -20,8 +20,7 @@ interface NetworkApi {
     @POST("kotlintest")
     suspend fun postPost(
         @Body body: ModelDataClass
-    ) : PostResponse
-
+    ): PostResponse
 
     companion object {
         operator fun invoke(): NetworkApi {

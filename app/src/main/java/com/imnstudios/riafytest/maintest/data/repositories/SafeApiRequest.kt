@@ -50,7 +50,6 @@ abstract class SafeApiRequest {
 }
 
 
-
 class ApiException(message: String) : IOException(message) {
     override fun printStackTrace() {
         super.printStackTrace()

@@ -72,8 +72,9 @@ class LandingActivity : AppCompatActivity(), ListenerInterface {
     }
 
     override fun onSuccess(post: ModelDataClass) {
-        toast("successsss")
+        toast("success")
     }
+
 
     override fun onFailure(message: String) {
         toast(message)

@@ -27,6 +27,7 @@ abstract class SafeApiRequest {
             }
             message.append("Error Code :${response.code()}")
             Log.d("ERRORORORORO", message.toString())
+
             throw  ApiException(
                 message.toString()
             )
@@ -36,5 +37,8 @@ abstract class SafeApiRequest {
 }
 
 class ApiException(message: String) : IOException(message) {
-
+    override fun printStackTrace() {
+        super.printStackTrace()
+        Log.d("ERRORORORORO", message.toString())
+    }
 }

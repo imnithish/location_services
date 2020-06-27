@@ -62,10 +62,12 @@ class LandingActivity : AppCompatActivity(), ListenerInterface {
         val doneButton = dialog.findViewById<Button>(R.id.done_btn)
 
         doneButton.setOnClickListener {
-            val title = titleEt.text.toString()
-            val desc = descEt.text.toString()
-            val model = ModelDataClass(title, desc)
+            val titleString = titleEt.text.toString()
+            val descString = descEt.text.toString()
+
+            val model = ModelDataClass(titleString, descString)
             viewModel.postPost(model)
+            dialog.dismiss()
         }
     }
 

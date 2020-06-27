@@ -12,11 +12,11 @@ import retrofit2.http.POST
 interface NetworkApi {
 
 
-    @GET("posts")
+    @GET("kotlintest")
     suspend fun getPosts(): Response<List<ModelDataClass>>
 
     @FormUrlEncoded
-    @POST("post")
+    @POST("kotlintest")
     suspend fun postPost(
         @Field("title") title: String,
         @Field("desc") desc: String
@@ -28,7 +28,7 @@ interface NetworkApi {
 
             return Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://fastingconsole.us-east-1.elasticbeanstalk.com/kotlintest/")
+                .baseUrl("http://fastingconsole.us-east-1.elasticbeanstalk.com/")
                 .build()
                 .create(NetworkApi::class.java)
         }
